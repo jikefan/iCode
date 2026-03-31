@@ -1,0 +1,242 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720" font-family="'SF Mono','Menlo','Consolas',monospace" font-size="12">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="entry" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e94560"/>
+      <stop offset="100%" style="stop-color:#c23152"/>
+    </linearGradient>
+    <linearGradient id="cli" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f3460"/>
+      <stop offset="100%" style="stop-color:#1a4a7a"/>
+    </linearGradient>
+    <linearGradient id="core" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#533483"/>
+      <stop offset="100%" style="stop-color:#6a42a0"/>
+    </linearGradient>
+    <linearGradient id="ui" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2b6777"/>
+      <stop offset="100%" style="stop-color:#358a9e"/>
+    </linearGradient>
+    <linearGradient id="agent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e07c24"/>
+      <stop offset="100%" style="stop-color:#c46a1d"/>
+    </linearGradient>
+    <linearGradient id="state" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e5128"/>
+      <stop offset="100%" style="stop-color:#287a38"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8892b0"/>
+    </marker>
+    <marker id="arrowWhite" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ccd6f6"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="720" rx="12" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="480" y="38" fill="#ccd6f6" font-size="20" font-weight="bold" text-anchor="middle">Claude Code Architecture</text>
+  <text x="480" y="56" fill="#8892b0" font-size="11" text-anchor="middle">Bun + TypeScript + React/Ink Terminal UI</text>
+
+  <!-- ==================== Layer 1: Entry ==================== -->
+  <text x="30" y="90" fill="#e94560" font-size="10" font-weight="bold">ENTRY</text>
+
+  <rect x="80" y="74" width="160" height="36" rx="6" fill="url(#entry)" filter="url(#shadow)"/>
+  <text x="160" y="89" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle">bootstrap-entry.ts</text>
+  <text x="160" y="103" fill="#ffccd5" font-size="9" text-anchor="middle">env &amp; feature gates</text>
+
+  <line x1="240" y1="92" x2="280" y2="92" stroke="#8892b0" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="283" y="74" width="160" height="36" rx="6" fill="url(#entry)" filter="url(#shadow)"/>
+  <text x="363" y="89" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle">cli.tsx</text>
+  <text x="363" y="103" fill="#ffccd5" font-size="9" text-anchor="middle">fast-path router</text>
+
+  <line x1="443" y1="92" x2="483" y2="92" stroke="#8892b0" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="486" y="74" width="160" height="36" rx="6" fill="url(#entry)" filter="url(#shadow)"/>
+  <text x="566" y="89" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle">main.tsx</text>
+  <text x="566" y="103" fill="#ffccd5" font-size="9" text-anchor="middle">Commander &amp; REPL init</text>
+
+  <!-- Fast path branches from cli.tsx -->
+  <rect x="700" y="74" width="230" height="36" rx="6" fill="#2a1a3e" stroke="#e94560" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="815" y="89" fill="#e94560" font-size="9" font-weight="bold" text-anchor="middle">Fast Paths</text>
+  <text x="815" y="103" fill="#8892b0" font-size="8" text-anchor="middle">--version | --mcp | --daemon | remote</text>
+
+  <line x1="443" y1="85" x2="460" y2="85" stroke="#e94560" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="460" y1="85" x2="460" y2="78" stroke="#e94560" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="460" y1="78" x2="700" y2="78" stroke="#e94560" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arrow)"/>
+
+  <!-- ==================== Layer 2: CLI Commands ==================== -->
+  <text x="30" y="146" fill="#4fc3f7" font-size="10" font-weight="bold">CLI</text>
+
+  <!-- Vertical arrow from main.tsx down -->
+  <line x1="566" y1="110" x2="566" y2="122" stroke="#8892b0" stroke-width="1.5"/>
+  <line x1="566" y1="122" x2="480" y2="122" stroke="#8892b0" stroke-width="1.5"/>
+  <line x1="480" y1="122" x2="480" y2="132" stroke="#8892b0" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="80" y="134" width="800" height="44" rx="8" fill="url(#cli)" filter="url(#shadow)"/>
+  <text x="480" y="152" fill="#ccd6f6" font-size="11" font-weight="bold" text-anchor="middle">commands/</text>
+  <text x="480" y="168" fill="#8892b0" font-size="9" text-anchor="middle">agents | config | mcp | git | branch | clear | advisor | install-slack-app | ... (100+ commands)</text>
+
+  <!-- ==================== Layer 3: Core Services (split into 3 columns) ==================== -->
+  <text x="30" y="216" fill="#bb86fc" font-size="10" font-weight="bold">CORE</text>
+
+  <!-- Arrow down -->
+  <line x1="480" y1="178" x2="480" y2="200" stroke="#8892b0" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Tools -->
+  <rect x="80" y="202" width="260" height="100" rx="8" fill="url(#core)" filter="url(#shadow)"/>
+  <text x="210" y="222" fill="#fff" font-size="11" font-weight="bold" text-anchor="middle">tools/</text>
+  <text x="210" y="237" fill="#d4bfff" font-size="9" text-anchor="middle">Tool.ts base class + tools.ts registry</text>
+  <line x1="100" y1="246" x2="320" y2="246" stroke="#7c5caa" stroke-width="0.5"/>
+  <text x="100" y="262" fill="#d4bfff" font-size="9">BashTool</text>
+  <text x="175" y="262" fill="#d4bfff" font-size="9">FileEditTool</text>
+  <text x="268" y="262" fill="#d4bfff" font-size="9">GlobTool</text>
+  <text x="100" y="278" fill="#d4bfff" font-size="9">GrepTool</text>
+  <text x="175" y="278" fill="#d4bfff" font-size="9">AgentTool</text>
+  <text x="255" y="278" fill="#d4bfff" font-size="9">MCPTool</text>
+  <text x="100" y="293" fill="#d4bfff" font-size="9">ReadTool</text>
+  <text x="175" y="293" fill="#d4bfff" font-size="9">WriteTool</text>
+  <text x="255" y="293" fill="#8892b0" font-size="9">... 30+</text>
+
+  <!-- Services -->
+  <rect x="350" y="202" width="260" height="100" rx="8" fill="url(#core)" filter="url(#shadow)"/>
+  <text x="480" y="222" fill="#fff" font-size="11" font-weight="bold" text-anchor="middle">services/</text>
+  <text x="480" y="237" fill="#d4bfff" font-size="9" text-anchor="middle">Core business logic &amp; integrations</text>
+  <line x1="370" y1="246" x2="590" y2="246" stroke="#7c5caa" stroke-width="0.5"/>
+  <text x="370" y="262" fill="#d4bfff" font-size="9">mcp/</text>
+  <text x="415" y="262" fill="#8892b0" font-size="9">client, server, discovery</text>
+  <text x="370" y="278" fill="#d4bfff" font-size="9">oauth/</text>
+  <text x="415" y="278" fill="#8892b0" font-size="9">auth &amp; token mgmt</text>
+  <text x="370" y="293" fill="#d4bfff" font-size="9">analytics/ plugins/ policyLimits/</text>
+
+  <!-- Utils -->
+  <rect x="620" y="202" width="260" height="100" rx="8" fill="url(#core)" filter="url(#shadow)"/>
+  <text x="750" y="222" fill="#fff" font-size="11" font-weight="bold" text-anchor="middle">utils/</text>
+  <text x="750" y="237" fill="#d4bfff" font-size="9" text-anchor="middle">Shared utilities &amp; helpers</text>
+  <line x1="640" y1="246" x2="860" y2="246" stroke="#7c5caa" stroke-width="0.5"/>
+  <text x="640" y="262" fill="#d4bfff" font-size="9">auth.js</text>
+  <text x="710" y="262" fill="#d4bfff" font-size="9">permissions/</text>
+  <text x="810" y="262" fill="#d4bfff" font-size="9">git/</text>
+  <text x="640" y="278" fill="#d4bfff" font-size="9">config.ts</text>
+  <text x="710" y="278" fill="#d4bfff" font-size="9">ripgrep.ts</text>
+  <text x="810" y="278" fill="#d4bfff" font-size="9">model/</text>
+  <text x="640" y="293" fill="#d4bfff" font-size="9">environment.ts</text>
+  <text x="750" y="293" fill="#d4bfff" font-size="9">sessionStorage.ts</text>
+
+  <!-- ==================== Layer 4: Terminal UI ==================== -->
+  <text x="30" y="340" fill="#4db6ac" font-size="10" font-weight="bold">UI</text>
+
+  <!-- Arrow down -->
+  <line x1="210" y1="302" x2="210" y2="322" stroke="#8892b0" stroke-width="1.5"/>
+  <line x1="480" y1="302" x2="480" y2="322" stroke="#8892b0" stroke-width="1.5"/>
+  <line x1="210" y1="322" x2="480" y2="322" stroke="#8892b0" stroke-width="1.5"/>
+  <line x1="345" y1="322" x2="345" y2="334" stroke="#8892b0" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="80" y="336" width="410" height="88" rx="8" fill="url(#ui)" filter="url(#shadow)"/>
+  <text x="285" y="355" fill="#fff" font-size="11" font-weight="bold" text-anchor="middle">Terminal UI Layer</text>
+
+  <!-- Ink engine -->
+  <rect x="94" y="364" width="120" height="50" rx="5" fill="rgba(255,255,255,0.08)"/>
+  <text x="154" y="381" fill="#b2dfdb" font-size="10" font-weight="bold" text-anchor="middle">ink/</text>
+  <text x="154" y="394" fill="#80cbc4" font-size="8" text-anchor="middle">Yoga layout</text>
+  <text x="154" y="406" fill="#80cbc4" font-size="8" text-anchor="middle">DOM + ANSI render</text>
+
+  <!-- Components -->
+  <rect x="224" y="364" width="120" height="50" rx="5" fill="rgba(255,255,255,0.08)"/>
+  <text x="284" y="381" fill="#b2dfdb" font-size="10" font-weight="bold" text-anchor="middle">components/</text>
+  <text x="284" y="394" fill="#80cbc4" font-size="8" text-anchor="middle">App, REPL, Dialog</text>
+  <text x="284" y="406" fill="#80cbc4" font-size="8" text-anchor="middle">146 components</text>
+
+  <!-- Hooks + Keys -->
+  <rect x="354" y="364" width="126" height="50" rx="5" fill="rgba(255,255,255,0.08)"/>
+  <text x="417" y="381" fill="#b2dfdb" font-size="10" font-weight="bold" text-anchor="middle">hooks/ + vim/</text>
+  <text x="417" y="394" fill="#80cbc4" font-size="8" text-anchor="middle">87+ hooks</text>
+  <text x="417" y="406" fill="#80cbc4" font-size="8" text-anchor="middle">Vim keybindings</text>
+
+  <!-- ==================== Layer 4 right: Agent & Coordination ==================== -->
+  <text x="520" y="340" fill="#ffb74d" font-size="10" font-weight="bold">AGENT</text>
+
+  <line x1="750" y1="302" x2="750" y2="334" stroke="#8892b0" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="530" y="336" width="350" height="88" rx="8" fill="url(#agent)" filter="url(#shadow)"/>
+  <text x="705" y="355" fill="#fff" font-size="11" font-weight="bold" text-anchor="middle">Agent &amp; Coordination</text>
+
+  <rect x="544" y="364" width="100" height="50" rx="5" fill="rgba(255,255,255,0.1)"/>
+  <text x="594" y="381" fill="#ffe0b2" font-size="10" font-weight="bold" text-anchor="middle">coordinator/</text>
+  <text x="594" y="394" fill="#ffcc80" font-size="8" text-anchor="middle">Multi-agent</text>
+  <text x="594" y="406" fill="#ffcc80" font-size="8" text-anchor="middle">orchestration</text>
+
+  <rect x="654" y="364" width="100" height="50" rx="5" fill="rgba(255,255,255,0.1)"/>
+  <text x="704" y="381" fill="#ffe0b2" font-size="10" font-weight="bold" text-anchor="middle">skills/</text>
+  <text x="704" y="394" fill="#ffcc80" font-size="8" text-anchor="middle">Bundled skills</text>
+  <text x="704" y="406" fill="#ffcc80" font-size="8" text-anchor="middle">&amp; plugins/</text>
+
+  <rect x="764" y="364" width="102" height="50" rx="5" fill="rgba(255,255,255,0.1)"/>
+  <text x="815" y="381" fill="#ffe0b2" font-size="10" font-weight="bold" text-anchor="middle">bridge/</text>
+  <text x="815" y="394" fill="#ffcc80" font-size="8" text-anchor="middle">Remote control</text>
+  <text x="815" y="406" fill="#ffcc80" font-size="8" text-anchor="middle">&amp; daemon</text>
+
+  <!-- ==================== Layer 5: State & Persistence ==================== -->
+  <text x="30" y="462" fill="#66bb6a" font-size="10" font-weight="bold">STATE</text>
+
+  <line x1="285" y1="424" x2="285" y2="446" stroke="#8892b0" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="705" y1="424" x2="705" y2="446" stroke="#8892b0" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="80" y="448" width="800" height="52" rx="8" fill="url(#state)" filter="url(#shadow)"/>
+  <text x="480" y="468" fill="#fff" font-size="11" font-weight="bold" text-anchor="middle">State &amp; Persistence</text>
+
+  <text x="140" y="488" fill="#a5d6a7" font-size="9" text-anchor="middle">state/</text>
+  <text x="240" y="488" fill="#a5d6a7" font-size="9" text-anchor="middle">context/</text>
+  <text x="340" y="488" fill="#a5d6a7" font-size="9" text-anchor="middle">memdir/</text>
+  <text x="440" y="488" fill="#a5d6a7" font-size="9" text-anchor="middle">tasks/</text>
+  <text x="540" y="488" fill="#a5d6a7" font-size="9" text-anchor="middle">sessions/</text>
+  <text x="650" y="488" fill="#a5d6a7" font-size="9" text-anchor="middle">migrations/</text>
+  <text x="780" y="488" fill="#a5d6a7" font-size="9" text-anchor="middle">~/.claude/ config</text>
+
+  <!-- ==================== Layer 6: External ==================== -->
+  <text x="30" y="540" fill="#8892b0" font-size="10" font-weight="bold">EXTERNAL</text>
+
+  <line x1="200" y1="500" x2="200" y2="528" stroke="#8892b0" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <line x1="480" y1="500" x2="480" y2="528" stroke="#8892b0" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <line x1="760" y1="500" x2="760" y2="528" stroke="#8892b0" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+
+  <rect x="80" y="530" width="220" height="44" rx="8" fill="rgba(255,255,255,0.04)" stroke="#8892b0" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="190" y="549" fill="#ccd6f6" font-size="10" font-weight="bold" text-anchor="middle">Anthropic API</text>
+  <text x="190" y="565" fill="#8892b0" font-size="9" text-anchor="middle">Claude SDK + Agent SDK</text>
+
+  <rect x="370" y="530" width="220" height="44" rx="8" fill="rgba(255,255,255,0.04)" stroke="#8892b0" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="480" y="549" fill="#ccd6f6" font-size="10" font-weight="bold" text-anchor="middle">MCP Servers</text>
+  <text x="480" y="565" fill="#8892b0" font-size="9" text-anchor="middle">Local &amp; Remote providers</text>
+
+  <rect x="660" y="530" width="220" height="44" rx="8" fill="rgba(255,255,255,0.04)" stroke="#8892b0" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="770" y="549" fill="#ccd6f6" font-size="10" font-weight="bold" text-anchor="middle">Cloud &amp; Extensions</text>
+  <text x="770" y="565" fill="#8892b0" font-size="9" text-anchor="middle">AWS Bedrock, Chrome, LSP</text>
+
+  <!-- ==================== Data Flow Legend ==================== -->
+  <rect x="80" y="600" width="800" height="100" rx="8" fill="rgba(255,255,255,0.02)" stroke="#2a3050" stroke-width="1"/>
+  <text x="480" y="622" fill="#8892b0" font-size="11" font-weight="bold" text-anchor="middle">Data Flow</text>
+
+  <!-- User input flow -->
+  <line x1="120" y1="645" x2="165" y2="645" stroke="#e94560" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="175" y="649" fill="#8892b0" font-size="9">User Input</text>
+  <text x="260" y="649" fill="#ccd6f6" font-size="9">Terminal → bootstrap → cli.tsx → main.tsx → REPL → Commander dispatch</text>
+
+  <!-- Tool execution flow -->
+  <line x1="120" y1="665" x2="165" y2="665" stroke="#bb86fc" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="175" y="669" fill="#8892b0" font-size="9">Tool Call</text>
+  <text x="260" y="669" fill="#ccd6f6" font-size="9">AI Response → Tool Registry → Permission Check → Tool.execute() → Result</text>
+
+  <!-- MCP flow -->
+  <line x1="120" y1="685" x2="165" y2="685" stroke="#ffb74d" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <text x="175" y="689" fill="#8892b0" font-size="9">MCP/API</text>
+  <text x="260" y="689" fill="#ccd6f6" font-size="9">MCP Discovery → Server Connect → Tool Proxy → External Service</text>
+</svg>
